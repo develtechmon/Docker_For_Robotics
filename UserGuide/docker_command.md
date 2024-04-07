@@ -29,7 +29,7 @@ Now let's build our custom image either using jetson nano or pc. Follow below st
 For Jetson Nano, you will have to build your docker using specific file which i've prepared below
 ```
 ros2_humble_jetson_nano_docker
-``
+```
 You just need to build the docker as follow for jetson nano
 ```
 docker image build -t my_image .
