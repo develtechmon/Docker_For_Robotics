@@ -26,9 +26,12 @@ Below is the image for `linux/amd64`
 Image : docker pull osrf/ros:humble-desktop-full
 ```
 Now let's build our custom image either using jetson nano or pc. Follow below step.
-For Jetson Nano, you will have to build your docker using specific file which i've prepared below
+For Jetson Nano, you will have to build your docker using specific file which i've prepared below in my repo.
 ```
-ros2_humble_jetson_nano_docker
+Docker_For_Robotics
+├── my_code/source
+├── ros2_humble_docker
+└── ros2_humble_jetson_nano_docker (Use this one for Jetson Nano)
 ```
 You just need to build the docker as follow for jetson nano
 ```
