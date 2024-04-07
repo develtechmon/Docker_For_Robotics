@@ -2,6 +2,30 @@
 
 To setup my docker environment. Follow the following
 
+## This is `jetson nano` image for `ros-humble`
+
+Check Link below
+```
+link : https://hub.docker.com/r/dustynv/ros/tags
+```
+
+Below is the image for `linux/arm64/v8`
+```
+Image : docker pull dustynv/ros:humble-desktop-l4t-r36.2.0
+```
+
+## This is `PC` image for `ros-humble`
+
+Check Link below
+```
+link : https://hub.docker.com/r/osrf/ros/tags
+```
+
+Below is the image for `linux/amd64`
+```
+Image : docker pull osrf/ros:humble-desktop-full
+```
+
 ## Step 1: Create `My_Project` for us to build `my_image`
 ```
 cd /home/jlukas/Desktop/My_Project/Docker_For_Robotics/ros2_humble_custom_docker/
