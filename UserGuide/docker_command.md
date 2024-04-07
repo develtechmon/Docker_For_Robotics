@@ -309,3 +309,23 @@ pyserial-miniterm
 ```
 
 And select index `1`. It should automatically recognize `Pico Microcontroller` port.
+
+# To access specific port 
+
+To access specific port let's say `lidar` or `arduino` port, write the following command. 
+Here i specify `--device=/dev/ttyACM0` of `arduino` port
+```
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --device=/dev/ttyACM0 my_image
+```
+
+# To access specific port with `root dialout 166` which is referring to `ACM USB modems`. 
+
+Write following command 
+```
+ls -l /dev/tty*
+```
+To access specific port let's say `lidar` or `arduino` port, write the following command. 
+Here i specify `--device=/dev/ttyACM0` of `arduino` port
+```
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --device-cgroup-rule='c 166:1 rmw' my_image
+```
