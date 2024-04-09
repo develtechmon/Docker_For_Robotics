@@ -366,3 +366,15 @@ Here i specify `--device=/dev/ttyACM0` of `arduino` port
 ```
 docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --device-cgroup-rule='c 166:1 rmw' my_image
 ```
+# To start docker with our custom name
+```
+docker run -it --user ros --name lukas --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --device-cgroup-rule='c 166:1 rmw' my_image
+```
+
+To stop and restart the docker 
+```
+sudo docker stop [name_of_container]
+sudo docker restart [name_of_container]
+
+sudo docker restart lukas
+```
