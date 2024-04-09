@@ -378,3 +378,14 @@ sudo docker restart [name_of_container]
 
 sudo docker restart lukas
 ```
+
+# To remove docker container
+```
+docker ps -a
+docker rm -f f6e5466272a
+```
+
+# To remove unused docker container
+```
+docker container prune
+```
