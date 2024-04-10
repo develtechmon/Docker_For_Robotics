@@ -74,17 +74,14 @@ rest of the `ros2 packages`.
 
 Follow the step below and you might to try each of the command below as long you can remove the package.
 ```
-sudo find / -name "*opencv*" -exec rm -rf {} \;
-sudo find / -name "*opencv*" -exec rm -i {} \;
-sudo find / -name "*opencv*" -exec rm -i {} \;
-
-sudo find / -name "*opencv*" -exec rm -i {} \;
-
 sudo apt-get purge '*opencv*'
 sudo find / -name "*opencv*" -exec rm -rf {} \;
-sudo find / -name "*opencv*";
-sudo find / -name "*opencv*" -exec rm -rf {} \;
 sudo apt remove libopencv-dev
+sudo apt-get autoremove
+```
+And install `opencv` packages
+```
+pip install opencv-contrib-python
 ```
 
 ## Step 4: Install our `lidar packages`
