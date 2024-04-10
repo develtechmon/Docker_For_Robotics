@@ -19,7 +19,11 @@ make
 sudo make load
 ls
 sudo adduser $USER dialout
-sudo usermod -a -G dialout jlukas 
+sudo usermod -a -G dialout ros <---- ros is depending on your user name. Just run echo ${USER} to find
+
+sudo apt update
+sudo apt upgrade
+sudo apt install ros-dev-tools
 ```
 At this point you've installed the `usb driver` successfully
 
