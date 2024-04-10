@@ -8,6 +8,20 @@ Open Jetson Nano and open new terminal and run below command
 ```
 git clone https://github.com/develtechmon/Docker_For_Robotics.git
 ```
+In other terminal of `Jetson Nano`, you'll need to install `CH341SER` driver.
+Follow below step accordingly.
+```
+cd /home/jlukas-jetson/
+git clone https://github.com/juliagoda/CH341SER.git
+
+cd CH341SER
+make
+sudo make load
+ls
+sudo adduser $USER dialout
+sudo usermod -a -G dialout jlukas 
+```
+At this point you've installed the `usb driver` successfully
 
 ## Step 2: Build our docker image
 Before building our docker image, please follow below step
