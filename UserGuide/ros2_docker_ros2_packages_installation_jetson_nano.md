@@ -61,6 +61,10 @@ sudo find / -name "*opencv*" -exec rm -rf {} \;
 sudo apt remove libopencv-dev
 sudo apt-get autoremove
 ```
+And install `opencv` packages
+```
+pip install opencv-contrib-python
+```
 
 ## Step 4: Install `ros2_packages`
 
