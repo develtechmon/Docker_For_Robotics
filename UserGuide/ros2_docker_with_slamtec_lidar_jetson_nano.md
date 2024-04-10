@@ -63,6 +63,26 @@ At this point, you should be inside the docker of `my_image`. Once we're in the 
 ```
 sudo apt-get update
 ```
+
+You will encounter with opencv issues later due to default opencv2 installation that come from the `humble` image
+of jetson nano. To solve the issue with opencv later, we need to remove this package to ensure it is easy to install
+rest of the `ros2 packages`.
+
+Follow the step below and you might to try each of the command below as long you can remove the package.
+```
+sudo find / -name "*opencv*" -exec rm -rf {} \;
+sudo find / -name "*opencv*" -exec rm -i {} \;
+sudo find / -name "*opencv*" -exec rm -i {} \;
+
+sudo find / -name "*opencv*" -exec rm -i {} \;
+
+sudo apt-get purge '*opencv*'
+sudo find / -name "*opencv*" -exec rm -rf {} \;
+sudo find / -name "*opencv*";
+sudo find / -name "*opencv*" -exec rm -rf {} \;
+sudo apt remove libopencv-dev
+```
+
 ## Step 4: Install our `lidar packages`
 
 While you're inside the docker terminal, go to following directory
