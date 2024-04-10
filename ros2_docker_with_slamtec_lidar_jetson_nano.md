@@ -96,13 +96,83 @@ ros2 launch sllidar_ros2 view_sllidar_c1_launch.py
 You should see `rviz2` appear and our sensor working.
 
 ## Step 6: Stop the docker 
-
 To stop the docker without losing our previous data, do the following
 
-While you're in the container type below command to quit from the docker
+While you're in the container type below command to quit from the docker. This will enable you
+to exit from the `my_image` docker
 ```
 exit
 ```
+
+To restart our previous closed docker `my_image`. Follow below step
+
+Run below command to check if `my_image` container still availabe.
+```
+docker ps -a
 ```
 
+Outpout will be as follow. See status `Up` which mean running.
 ```
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS          PORTS     NAMES
+d6654b5e7e26   my_image   "/bin/bash /entrypoi…"   53 minutes ago   Up 29 minutes             lukas
+```
+To stop our container, run below command
+```
+docker stop d6654b5e7e26
+
+or
+
+docker stop lukas
+```
+At this point your docker should be closed. and when you write down above command
+```
+docker ps -a
+```
+Output will be as follow, this indicate no container is running. See status `Exited`
+```
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS                            PORTS     NAMES
+d6654b5e7e26   my_image   "/bin/bash /entrypoi…"   56 minutes ago   Exited (137) About a minute ago             lukas
+```
+## Step 7: Restart our docker
+To restart previously closed container, run the following command
+```
+docker restart lukas
+```
+And when you run below comand
+```
+docker ps -a
+```
+Output will be as follow. See status `Up` which mean it is running again with `lukas` name and `my_image`.
+```
+CONTAINER ID   IMAGE      COMMAND                  CREATED             STATUS         PORTS     NAMES
+d6654b5e7e26   my_image   "/bin/bash /entrypoi…"   About an hour ago   Up 3 seconds             lukas
+```
+To attach with our running docker, write the following command
+```
+docker exec -it d6654b5e7e26 bash
+
+or
+
+docker exec -it lukas bash
+```
+
+At this point you should be inside the same docker again without losing your previous data.
+
+## Step 8: To check our `lidar_slamtec` again - if it still available or not
+
+run following command
+```
+cd ~
+```
+This will show you following directory our our previously created packages
+```
+lidar_slamtec
+```
+run our `lidar_ros` package again
+```
+ros2 launch sllidar_ros2 view_sllidar_c1_launch.py
+```
+
+The rviz should work again and our sensor.
+
+Next you can stop and restart the container with no issue
