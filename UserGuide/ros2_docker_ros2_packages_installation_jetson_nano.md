@@ -95,6 +95,8 @@ sudo apt-get install ros-humble-slam-toolbox -y
 sudo apt-get install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtlebot3* -y
 sudo apt-get install ros-humble-nav2* -y
 sudo apt-get install ros-humble-tf2* -y
+
+sudo apt-get install python3-serial
 ```
 
 ## Step 5: Source our `ros2 file`
