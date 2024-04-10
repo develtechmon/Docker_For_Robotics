@@ -160,6 +160,10 @@ d6654b5e7e26   my_image   "/bin/bash /entrypoi…"   56 minutes ago   Exited (13
 To restart previously closed container, run the following command
 ```
 docker restart lukas
+
+or
+
+docker start lukas
 ```
 And when you run below comand
 ```
