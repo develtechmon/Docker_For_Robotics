@@ -4,10 +4,25 @@ RUN apt-get update \
  && apt-get install -y \
  nano \
  vim \
-#  bash-completion \
-#  python3-argcomplete \
+ #bash-completion \
+ #python3-argcomplete \
  terminator \
  joystick jstest-gtk evtest \
+ #ros-humble-xacro \
+ #ros-humble-joint-state-publisher-gui \
+ #ros-humble-teleop-twist-keyboard \ 
+ #ros-humble-teleop-twist-joy \ 
+ #ros-humble-twist-mux \
+ #v4l-utils \
+ #ros-humble-ros2-control \
+ #ros-humble-ros2-controllers \
+ #ros-humble-controller-manager \
+ #ros-humble-slam-toolbox \
+ #ros-humble-navigation2 \
+ #ros-humble-nav2-bringup \
+ #ros-humble-turtlebot3* \
+ #ros-humble-nav2* \
+ #ros-humble-tf2* \ 
  && rm -rf /var/lib/apt/lists/*
 
 # Example of copying a file
