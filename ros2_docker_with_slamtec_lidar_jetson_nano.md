@@ -49,5 +49,60 @@ At this point, you should be inside the docker of `my_image`. Once we're in the 
 ```
 sudo apt-get update
 ```
+## Step 4: Install our `lidar packages`
 
+While you're inside the docker terminal, go to following directory
+```
+cd ~
 
+or
+
+cd /home/ros
+```
+
+And follow rest of the step below
+```
+mkdir -p lidar_slamtec/src
+cd lidar_slamtec/src
+git clone https://github.com/Slamtec/sllidar_ros2.git
+cd lidar_slamtec/
+colcon build --symlink-install
+source install/setup.bash
+```
+Then plug your `lidar sensor` to the jetson nano and run below command step
+```
+ls /dev/ttyUSB0 <---- This is my device id
+
+and change the mode to ensure we can access this later.
+sudo chmod 777 /dev/ttyUSB0
+```
+
+## Step 5: Run our `lidar_ros` package
+
+Before start running our lidar, first we need to add the `source` command into our `bashrc` command
+so that we don't need to source the `lidar_slamtec` package everytime
+```
+sudo vi ~ros/.bashrc
+```
+Add following line into the this file and save and quit
+```
+source /home/ros/lidar_slamtec/install/setup.bash 
+```
+
+Then use below command to run the `lidar_slamtec`
+```
+ros2 launch sllidar_ros2 view_sllidar_c1_launch.py
+```
+You should see `rviz2` appear and our sensor working.
+
+## Step 6: Stop the docker 
+
+To stop the docker without losing our previous data, do the following
+
+While you're in the container type below command to quit from the docker
+```
+exit
+```
+```
+
+```
